@@ -41,4 +41,20 @@ const updateGoogleSheets = async (data) => {
     .then(() => console.log(chalk.green("Google Sheets Updated")))
 }
 
-module.exports = {updateGoogleSheets}
+const clearGoogleSheets = () => {
+  const options = {
+    spreadsheetId: googleSheetId,
+    range: "Smartpark!A2:E7"
+  }
+  return new Promise((resolve, reject) => {
+    gsapi.spreadsheets.values
+    .clear(options)
+    .then(() => {
+      resolve()
+      console.log(chalk.blue("Google Sheets Cleared"))
+    })
+    .catch(() => reject())
+  })
+}
+
+module.exports = {updateGoogleSheets, clearGoogleSheets}

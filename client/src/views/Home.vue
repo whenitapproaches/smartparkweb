@@ -37,12 +37,13 @@ import Cars from "@/components/Cars"
 import Welcome from "@/components/Welcome"
 import About from "@/components/About"
 import History from "@/components/History"
+import Overview from '@/components/Overview'
 import {mapGetters} from 'vuex'
 export default {
   name: "Home",
   data: function() {
     return {
-      tabs: ["Welcome", "Map", "Cars", "History", "About"],
+      tabs: ["Welcome", "Map", "Cars", "Overview", "History", "About"],
       currentTab: "Welcome",
       slots: [
         {
@@ -104,7 +105,8 @@ export default {
     Cars,
     Welcome,
     About,
-    History
+    History,
+    Overview
   }
 }
 </script>

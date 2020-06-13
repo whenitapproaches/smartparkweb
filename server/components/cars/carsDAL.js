@@ -1,5 +1,5 @@
 const Car = require("./car")
-const { updateGoogleSheets } = require("../services/googletSheetApiService")
+const { updateGoogleSheets, clearGoogleSheets } = require("../services/googletSheetApiService")
 
 module.exports = {
   listAllCars() {
@@ -26,7 +26,8 @@ module.exports = {
             ]
             return [...acc, field]
         }, [])
-        updateGoogleSheets(arr)
+        clearGoogleSheets()
+        .then(() => updateGoogleSheets(arr))
     })
   },
 }

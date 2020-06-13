@@ -52,9 +52,6 @@
                 <i class="fas fa-sort"></i>
               </a>
             </th>
-            <th></th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
